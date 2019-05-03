@@ -12,5 +12,6 @@ RUN npm install serverless --global --ignore-scripts spawn-sync
 RUN npm install serverless-offline --global --save-dev
 RUN npm install serverless-python-requirements --global
 RUN npm install serverless-dotenv-plugin --global --save-dev
+RUN npm install serverless-s3-local --global --save-dev
 
 ENTRYPOINT ["/bin/sh", "-c"]
