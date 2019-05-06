@@ -13,4 +13,3 @@ ENV WORKDIR /var/task
 # node is required for serverless
 RUN apk add nodejs npm --progress
 
-ENTRYPOINT ["/bin/sh", "-c"]
