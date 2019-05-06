@@ -6,12 +6,11 @@ MAINTAINER Johannes "Sepp" Stadler <j.stadler@fupa.net>
 RUN apk update  --progress && \
     apk upgrade --progress
 
-# serverless framework for local execution and deployment of AWS Lambda functions
+RUN mkdir /var/task
+WORKDIR /var/task
+ENV WORKDIR /var/task
+
+# node is required for serverless
 RUN apk add nodejs npm --progress
-RUN npm install serverless --global --ignore-scripts spawn-sync
-RUN npm install serverless-offline --global --save-dev
-RUN npm install serverless-python-requirements --global
-RUN npm install serverless-dotenv-plugin --global --save-dev
-RUN npm install serverless-s3-local --global --save-dev
 
 ENTRYPOINT ["/bin/sh", "-c"]
